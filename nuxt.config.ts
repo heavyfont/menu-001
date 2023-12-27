@@ -9,6 +9,7 @@ export default defineNuxtConfig({
           '@hypernym/nuxt-gsap',
           '@hypernym/nuxt-font',
           "nuxt-split-type",
+          "@hypernym/nuxt-font",
           "@nuxt/image"
      ],
      
@@ -16,6 +17,7 @@ export default defineNuxtConfig({
           '~/assets/styles/main.scss',
           '~/assets/css/fonts.css'
      ],
+     
      gsap: {
           extraPlugins: {
             scrollTrigger: true,
