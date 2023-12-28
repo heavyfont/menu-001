@@ -1,29 +1,25 @@
-/* @font-face {
-    font-family: 'Just Ext';
-    font-display: swap;
-    src: url('~/assets/fonts/JUST Sans ExBold.woff2') format('woff2'), 
-         url('~/assets/fonts/JUST Sans ExBold.woff') format('woff');
-    font-weight: 900;
-  }
-  @font-face {
-    font-family: 'Just Semi';
-    font-display: swap;
-    src: url('~/assets/fonts/JUST Sans SemiBold.woff2') format('woff2'), 
-         url('~/assets/fonts/JUST Sans SemiBold.woff') format('woff');
-    font-weight: 500;
-  }
-  @font-face {
-    font-family: 'Just Reg';
-    font-display: swap;
-    src: url('~/assets/fonts/JUST Sans Regular.woff2') format('woff2'), 
-         url('~/assets/fonts/JUST Sans Regular.woff') format('woff');
-    font-weight: 400;
-  }
 
-  @font-face {
-     font-family: 'Good Brush';
+@font-face {
      font-display: swap;
-     src: url('~/assets/fonts/Good Brush.woff2') format('woff2'), 
-          url('~/assets/fonts/Good Brush.woff') format('woff');
+     font-family: 'Over Bold';
+     src: url('/assets/fonts/OverusedGrotesk-Bold.woff2') format('woff2');
+     font-weight: 800;
+   } 
+   @font-face {
+     font-display: swap;
+     font-family: 'Over Med';
+     src: url('/assets/fonts/OverusedGrotesk-Medium.woff2') format('woff2');
+     font-weight: 600;
+   } 
+   @font-face {
+     font-display: swap;
+     font-family: 'Libre Med';
+     src: url('/assets/fonts/LibreCaslonCondensed-Medium.woff2') format('woff2');
+     font-weight: 600;
+   } 
+   @font-face {
+     font-display: swap;
+     font-family: 'Libre';
+     src: url('/assets/fonts/LibreCaslonCondensed-Regular.woff2') format('woff2');
      font-weight: 400;
-   } */
+   } 

@@ -17,7 +17,7 @@ const { $gsap } = useNuxtApp()
     {
       src: '/fonts/LibreCaslonCondensed-Regular.woff2',
       family: 'Libre',
-      weight: '300',
+      weight: '400',
       fallback: ['serif'],
       variable: 'font_libre',
       preload: true,
@@ -56,18 +56,7 @@ async function loadFonts() {
 }
 
   onMounted(async () => {
-  // nuxtApp.hook("page:start", () => {
-  //   isLoading.value = true;
-  // });
-
-  // nuxtApp.hook("page:finish", () => {
-  //   isLoading.value = false;
-  // });
-  await loadFonts(); // Wait for fonts to be loaded
-  window.onload = () => {
-    // Entire page, including fonts, has finished loading
-    isLoading.value = false;
-  };
+      await loadFonts(); // Wait for fonts to be loaded
   });
 </script>
 <template>
@@ -87,5 +76,6 @@ async function loadFonts() {
   margin: 0 auto;
   padding: 0.5rem;
 }
+
 
 </style>

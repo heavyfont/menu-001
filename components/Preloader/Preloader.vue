@@ -19,6 +19,14 @@
             disableScrolls();
         })
         onMounted(() => {
+
+            const font = [
+                new FontFace('Libre Med', 'url(/fonts/LibreCaslonCondensed-Medium.woff2)'),
+                new FontFace('Libre', 'url(/fonts/LibreCaslonCondensed-Regular.woff2)'),
+                new FontFace('Over Bold', 'url(/fonts/OverusedGrotesk-Bold.woff2)'),
+                new FontFace('Over Med', 'url(/fonts/OverusedGrotesk-Medium.woff2)'),
+            ] 
+            
             let targets = $gsap.utils.toArray(".logo-wrapper .char");
             const preload = document.querySelector(".preloader")
             const logoWrapper = document.querySelector(".logo-wrapper")
@@ -55,6 +63,7 @@
                 }
             })
             disableScrolls();
+            
         });
 
         onUnmounted(() => {

@@ -11,7 +11,7 @@
     link: 'https://www.behance.net/gallery/181674983/Music-Festival-Identity-HarmonyFest',
     marqueeDuration: 10,
     firstWord: 'Harmony',
-    imageSrc: 'img/harmony.jpg',
+    imageSrc: '/img/harmony.jpg',
     secondWord: 'Fest',
     direction:'none'
   },
@@ -20,7 +20,7 @@
     link: 'https://www.behance.net/gallery/184570419/Eco-wave-Visual-identity',
     marqueeDuration: 10,
     firstWord: 'Eco',
-    imageSrc: 'img/eco.jpg',
+    imageSrc: '/img/eco.jpg',
     secondWord: 'Wave',
     direction:'reverse'
   },
@@ -29,7 +29,7 @@
     link: 'https://www.behance.net/gallery/186430097/Craftwise-Visual-Identity',
     marqueeDuration: 15,
     firstWord: 'Craft',
-    imageSrc: 'img/craft.jpg',
+    imageSrc: '/img/craft.jpg',
     secondWord: 'Wise',
     direction:'none'
   },
@@ -38,7 +38,7 @@
     link: 'https://www.behance.net/gallery/171457637/Brews-Books-(-passion-project-)',
     marqueeDuration: 11,
     firstWord: 'Brews &',
-    imageSrc: 'img/coffee.jpg',
+    imageSrc: '/img/coffee.jpg',
     secondWord: 'Books',
     direction:'reverse'
   },
@@ -47,7 +47,7 @@
     link: 'https://anhsin.io/',
     marqueeDuration: 11,
     firstWord: 'Anhsin',
-    imageSrc: 'img/coffee.jpg',
+    imageSrc: '/img/coffee.jpg',
     secondWord: '',
     direction:'none'
   },
