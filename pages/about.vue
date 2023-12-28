@@ -37,7 +37,7 @@
                 
                 <div class="md:-rotate-6 lg:w-96 md:w-80 w-64 about-image ">
                     <span class="about-image-wrapper">
-                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="/img/coffee.jpg" />
+                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703737452/_2a16070d-4c91-4929-8544-8d8c7777d50b_xpppxe.jpg" />
                     </span>
                 </div>
               
@@ -83,12 +83,12 @@
             <div class="lg:grid grid-cols-2 gap-x-5 images mt-10">
                 <figure class="image-wrapper mb-10">
                     <div class="image ">
-                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="/img/skill-3.jpg" />
+                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703738039/sadie-teper-WG-hXR1rLNk-unsplash_1_1_fw44yc.jpg" />
                     </div>
                 </figure>
                 <figure class="image-wrapper ">
                     <div class="image">
-                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="/img/skill-3.jpg" />
+                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703738810/Mask_group_dao1m6.jpg" />
                     </div>
                 </figure>
             </div>
@@ -167,7 +167,7 @@
  .about{
   &-hero{
     &-wrapper{
-      background-image: url("https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/bg-2_oj2z76.jpg");
+      background-image: url("https://res.cloudinary.com/do3kfvk9o/image/upload/v1703736681/Group_184_lygjpz.jpg");
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
