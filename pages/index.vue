@@ -118,7 +118,7 @@
                           <span class="lg:text-8xl md:text-5xl text-4xl sans-serif-bold uppercase">{{ project.firstWord }}</span>
                           <div class="project-image">
                             <span class="image absolute inset-0">
-                              <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" :src="project.imageSrc" />
+                              <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" :src="project.imageSrc" loading="lazy" draggable="false" />
                             </span>
                           </div>
                           <span class="lg:text-8xl md:text-5xl text-4xl sans-serif-bold uppercase">{{ project.secondWord }}</span>
@@ -146,7 +146,7 @@
          <div class="relative overflow-hidden">
            <div class="home-skill-image my-10 mx-auto overflow-hidden">
             <figure class="overflow-hidden">
-               <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/skill-3_wndar8.jpg" />
+               <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/skill-3_wndar8.jpg" loading="lazy" draggable="false" />
             </figure>
            </div>
            <div class="absolute  top-0 capsules w-full h-full lg:text-2xl  text-sm">

@@ -2,24 +2,24 @@
 @font-face {
      font-display: swap;
      font-family: 'Over Bold';
-     src: url('/assets/fonts/OverusedGrotesk-Bold.woff2') format('woff2');
+     src: url('/fonts/OverusedGrotesk-Bold.woff2') format('woff2');
      font-weight: 800;
    } 
    @font-face {
      font-display: swap;
      font-family: 'Over Med';
-     src: url('/assets/fonts/OverusedGrotesk-Medium.woff2') format('woff2');
+     src: url('/fonts/OverusedGrotesk-Medium.woff2') format('woff2');
      font-weight: 600;
    } 
    @font-face {
      font-display: swap;
      font-family: 'Libre Med';
-     src: url('/assets/fonts/LibreCaslonCondensed-Medium.woff2') format('woff2');
+     src: url('/fonts/LibreCaslonCondensed-Medium.woff2') format('woff2');
      font-weight: 600;
    } 
    @font-face {
      font-display: swap;
      font-family: 'Libre';
-     src: url('/assets/fonts/LibreCaslonCondensed-Regular.woff2') format('woff2');
+     src: url('/fonts/LibreCaslonCondensed-Regular.woff2') format('woff2');
      font-weight: 400;
    } 

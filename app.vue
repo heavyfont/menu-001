@@ -6,19 +6,63 @@ const { $gsap } = useNuxtApp()
 
   })
 
-
+  useFont([
+    {
+      src: '/fonts/LibreCaslonCondensed-Medium.woff2',
+      family: 'Libre Med',
+      weight: '600',
+      variable: 'font_libre_med',
+      display: 'swap',
+      preload: true, 
+    },
+    {
+      src: '/fonts/LibreCaslonCondensed-Regular.woff2',
+      family: 'Libre',
+      weight: '300',
+      variable: 'font_libre',
+      display: 'swap',
+      preload: true,
+    },
+    {
+      src: '/fonts/OverusedGrotesk-Bold.woff2',
+      family: 'Over Bold',
+      weight: '100 900',
+      display: 'swap',
+      preload: true, 
+    },
+    {
+      src: '/fonts/OverusedGrotesk-Medium.woff2',
+      family: 'Over Med',
+      weight: '100 900',
+      display: 'swap',
+      preload: true, 
+    },
+  ])
+  const nuxtApp = useNuxtApp();
+  const loading = ref(false);
+  nuxtApp.hook("page:start", () => {
+    loading.value = true;
+  });
+  nuxtApp.hook("page:finish", () => {
+    loading.value = false;
+  });
   onMounted(() => {
-  // nuxtApp.hook("page:start", () => {
-  //   isLoading.value = true;
-  // });
+    const fontLoad = document.fonts.ready.then(() => {
+            const fontsLoadedEvent = new CustomEvent(CUSTOM_EVENTS.FONTS_LOADED)
+            window.dispatchEvent(fontsLoadedEvent)
+    })
 
-  // nuxtApp.hook("page:finish", () => {
-  //   isLoading.value = false;
-  // });
+    Promise.all([fontLoad]).then(() => {
+         isLoading.value = true
+    })
   });
 </script>
 <template>
   <Html lang="en"> 
+    <div
+      v-if="loading"
+      class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500"
+    ></div>
       <main class="app">
         <Preloader v-if="isLoading" />
         <NuxtLayout>

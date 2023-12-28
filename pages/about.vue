@@ -37,7 +37,7 @@
                 
                 <div class="md:-rotate-6 lg:w-96 md:w-80 w-64 about-image ">
                     <span class="about-image-wrapper">
-                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703737452/_2a16070d-4c91-4929-8544-8d8c7777d50b_xpppxe.jpg" />
+                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703737452/_2a16070d-4c91-4929-8544-8d8c7777d50b_xpppxe.jpg" loading="lazy" draggable="false" />
                     </span>
                 </div>
               
@@ -83,12 +83,12 @@
             <div class="lg:grid grid-cols-2 gap-x-5 images mt-10">
                 <figure class="image-wrapper mb-10">
                     <div class="image ">
-                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703738039/sadie-teper-WG-hXR1rLNk-unsplash_1_1_fw44yc.jpg" />
+                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703738039/sadie-teper-WG-hXR1rLNk-unsplash_1_1_fw44yc.jpg" loading="lazy" draggable="false" />
                     </div>
                 </figure>
                 <figure class="image-wrapper ">
                     <div class="image">
-                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703738810/Mask_group_dao1m6.jpg" />
+                        <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703738810/Mask_group_dao1m6.jpg" loading="lazy" draggable="false" />
                     </div>
                 </figure>
             </div>

@@ -17,7 +17,11 @@ export default defineNuxtConfig({
           '~/assets/styles/main.scss',
           '~/assets/css/fonts.css'
      ],
-     
+     nitro: {
+          prerender: {
+            routes: ['/', '/about'],
+          },
+        },
      gsap: {
           extraPlugins: {
             scrollTrigger: true,
