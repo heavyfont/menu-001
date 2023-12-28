@@ -167,7 +167,7 @@
  .about{
   &-hero{
     &-wrapper{
-      background-image: url("/img/bg-2.jpg");
+      background-image: url("https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/bg-2_oj2z76.jpg");
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;

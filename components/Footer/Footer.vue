@@ -44,7 +44,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-image: url("/img/bg.jpg");
+    background-image: url("https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733238/bg_y5rklj.jpg");
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;

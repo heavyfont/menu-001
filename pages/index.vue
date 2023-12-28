@@ -11,7 +11,7 @@
     link: 'https://www.behance.net/gallery/181674983/Music-Festival-Identity-HarmonyFest',
     marqueeDuration: 10,
     firstWord: 'Harmony',
-    imageSrc: '/img/harmony.jpg',
+    imageSrc: 'https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/harmony_kgeqt1.jpg',
     secondWord: 'Fest',
     direction:'none'
   },
@@ -20,7 +20,7 @@
     link: 'https://www.behance.net/gallery/184570419/Eco-wave-Visual-identity',
     marqueeDuration: 10,
     firstWord: 'Eco',
-    imageSrc: '/img/eco.jpg',
+    imageSrc: 'https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/eco_xrlksg.jpg',
     secondWord: 'Wave',
     direction:'reverse'
   },
@@ -29,7 +29,7 @@
     link: 'https://www.behance.net/gallery/186430097/Craftwise-Visual-Identity',
     marqueeDuration: 15,
     firstWord: 'Craft',
-    imageSrc: '/img/craft.jpg',
+    imageSrc: 'https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/craft_l8co7x.jpg',
     secondWord: 'Wise',
     direction:'none'
   },
@@ -38,7 +38,7 @@
     link: 'https://www.behance.net/gallery/171457637/Brews-Books-(-passion-project-)',
     marqueeDuration: 11,
     firstWord: 'Brews &',
-    imageSrc: '/img/coffee.jpg',
+    imageSrc: 'https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733236/coffee_aicxhw.jpg',
     secondWord: 'Books',
     direction:'reverse'
   },
@@ -47,7 +47,7 @@
     link: 'https://anhsin.io/',
     marqueeDuration: 11,
     firstWord: 'Anhsin',
-    imageSrc: '/img/coffee.jpg',
+    imageSrc: 'https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733559/image_3_kyzyzu.jpg',
     secondWord: '',
     direction:'none'
   },
@@ -146,7 +146,7 @@
          <div class="relative overflow-hidden">
            <div class="home-skill-image my-10 mx-auto overflow-hidden">
             <figure class="overflow-hidden">
-               <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" data-u-speed="1" src="/img/skill-3.jpg" />
+               <NuxtImg class="w-full h-full top-0 left-0 absolute overflow-hidden" src="https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733237/skill-3_wndar8.jpg" />
             </figure>
            </div>
            <div class="absolute  top-0 capsules w-full h-full lg:text-2xl  text-sm">
@@ -231,7 +231,7 @@
  .home{
   &-hero{
     &-wrapper{
-      background-image: url("/img/bg.jpg");
+      background-image: url("https://res.cloudinary.com/do3kfvk9o/image/upload/v1703733238/bg_y5rklj.jpg");
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
