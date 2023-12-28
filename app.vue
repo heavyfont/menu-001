@@ -27,7 +27,6 @@ const { $gsap } = useNuxtApp()
       family: 'Over Bold',
       weight: '100 900',
       fallback: ['sans-serif'],
-      variable: 'font_over_bold',
       preload: true, 
     },
     {
@@ -35,14 +34,28 @@ const { $gsap } = useNuxtApp()
       family: 'Over Med',
       weight: '100 900',
       fallback: ['sans-serif'],
-      variable: 'font_over_med',
       preload: true, 
     },
   ])
   
+// Function to load fonts using the FontFace API
+async function loadFonts() {
+  const fontPromises = [
+    new FontFace('Libre Med', 'url(/fonts/LibreCaslonCondensed-Medium.woff2)', { weight: '600' }).load(),
+    new FontFace('Libre', 'url(/fonts/LibreCaslonCondensed-Regular.woff2)', { weight: '400' }).load(),
+    new FontFace('Over Bold', 'url(/fonts/OverusedGrotesk-Bold.woff2)', { weight: '800' }).load(),
+    new FontFace('Over Med', 'url(/fonts/OverusedGrotesk-Medium.woff2)', { weight: '600' }).load(),
+    // Add other font configurations
+  ];
 
+  try {
+    await Promise.all(fontPromises);
+  } catch (error) {
+    console.error('Error loading fonts:', error);
+  }
+}
 
-  onMounted(() => {
+  onMounted(async () => {
   // nuxtApp.hook("page:start", () => {
   //   isLoading.value = true;
   // });
@@ -50,6 +63,11 @@ const { $gsap } = useNuxtApp()
   // nuxtApp.hook("page:finish", () => {
   //   isLoading.value = false;
   // });
+  await loadFonts(); // Wait for fonts to be loaded
+  window.onload = () => {
+    // Entire page, including fonts, has finished loading
+    isLoading.value = false;
+  };
   });
 </script>
 <template>
