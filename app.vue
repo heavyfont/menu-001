@@ -3,7 +3,10 @@ const isLoading = ref(true);
 const { $gsap } = useNuxtApp()
   const locale = useState<string>('locale.setting')
   useHead({
-
+    title: 'Vickywitvicky',
+    meta: [
+    { name: 'description', content: 'Vickywitvicky portfolio' }
+  ],
   })
 
   useFont([

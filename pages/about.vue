@@ -8,7 +8,12 @@
     const { $Draggable } = useNuxtApp()
     const { $Flip } = useNuxtApp()
     const { $Observer } = useNuxtApp()
-
+    useHead({
+    title: 'Vickywitvicky - About',
+    meta: [
+    { name: 'description', content: 'About Vickywitvicky portfolio' }
+  ],
+  })
 
     onMounted(() => {
     })

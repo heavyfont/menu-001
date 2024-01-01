@@ -9,7 +9,6 @@ export default defineNuxtConfig({
           '@hypernym/nuxt-gsap',
           '@hypernym/nuxt-font',
           "nuxt-split-type",
-          "@hypernym/nuxt-font",
           "@nuxt/image"
      ],
      

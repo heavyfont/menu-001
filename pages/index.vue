@@ -3,7 +3,12 @@
     const { $ScrollTrigger } = useNuxtApp()
     const { $gsap } = useNuxtApp()
 
-
+    useHead({
+    title: 'Vickywitvicky Portfolio',
+    meta: [
+    { name: 'description', content: 'Vickywitvicky portfolio' }
+  ],
+  })
 
     const projects = [
   {
