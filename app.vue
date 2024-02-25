@@ -1,7 +1,17 @@
 <script lang="ts" setup>
-const isLoading = ref(true);
-const { $gsap } = useNuxtApp()
+  const nuxtApp = useNuxtApp();
+  const { $gsap } = useNuxtApp()
   const locale = useState<string>('locale.setting')
+  const router = useRouter();
+  const isLoading = ref(true);
+
+    // nuxtApp.hook("page:start", () => {
+    //   isLoading.value = true;
+    // });
+    // nuxtApp.hook("page:finish", () => {
+    //   isLoading.value = false;
+    // });
+
   useHead({
     title: 'Vickywitvicky',
     meta: [
@@ -41,14 +51,7 @@ const { $gsap } = useNuxtApp()
       preload: true, 
     },
   ])
-  const nuxtApp = useNuxtApp();
-  const loading = ref(false);
-  nuxtApp.hook("page:start", () => {
-    loading.value = true;
-  });
-  nuxtApp.hook("page:finish", () => {
-    loading.value = false;
-  });
+
   onMounted(() => {
     const fontLoad = document.fonts.ready.then(() => {
             const fontsLoadedEvent = new CustomEvent(CUSTOM_EVENTS.FONTS_LOADED)
@@ -58,18 +61,23 @@ const { $gsap } = useNuxtApp()
     Promise.all([fontLoad]).then(() => {
          isLoading.value = true
     })
+
   });
+  
+  const handleLoadingComplete = () => {
+      isLoading.value = false
+      console.log('Loading complete event received in app.vue');
+  }
+
+// Scroll to top when route changes
+
 </script>
 <template>
   <Html lang="en"> 
-    <div
-      v-if="loading"
-      class="fixed left-0 top-0 h-0.5 w-full z-50 bg-green-500"
-    ></div>
       <main class="app">
-        <Preloader v-if="isLoading" />
-        <NuxtLayout>
-          <NuxtPage />
+        <Preloader @loadingComplete="handleLoadingComplete"  />
+        <NuxtLayout ref="main" v-if="!isLoading"  >
+           <NuxtPage  />
         </NuxtLayout>
       </main>
   </Html>
@@ -81,5 +89,7 @@ const { $gsap } = useNuxtApp()
   margin: 0 auto;
   padding: 0.5rem;
 }
-
+.main-wrapper{
+  display: none;
+}
 </style>

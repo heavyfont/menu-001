@@ -10,18 +10,18 @@
  .btn-main{
   font-family: 'Over Med', sans-serif;
    font-size: 24px;
-   background-color: #FAFF00;
+   border: 1px solid #1b1b1b;
    color: #1b1b1b;
-   padding-left: 0.2rem;
-   padding-right: 0.2rem;
-   border-radius: 3px;
+   padding-left: 3rem;
+   padding-right: 3rem;
+   border-radius: 50px;
    display: inline-flex;
    pointer-events:auto;
    text-transform: uppercase;
     span{
       display: block;
     position: relative;
-    z-index: 10;
+
    }
  }
 

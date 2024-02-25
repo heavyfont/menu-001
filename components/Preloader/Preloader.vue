@@ -1,17 +1,17 @@
 <script setup>
         const { $lenis } = useNuxtApp()
-        const showPreloader = ref(true);
         const { $ScrollTrigger } = useNuxtApp()
         const { $gsap } = useNuxtApp()
+
+        // Use defineEmits to specify the custom event
+        const emit = defineEmits(['loadingComplete']);
+
         // Disable scroll when the preloader is active
         const disableScrolls = () => {
             $lenis.stop()
         };
-
         // Enable scroll when the preloader is hidden
         const enableScroll = () => {
-            let body = document.querySelector("body")
-            body.classList.remove("overflow-hidden")
             $lenis.start()
         };
 
@@ -19,44 +19,66 @@
             disableScrolls();
         })
         onMounted(() => {
-
-            let targets = $gsap.utils.toArray(".logo-wrapper .char");
             const preload = document.querySelector(".preloader")
-            const logoWrapper = document.querySelector(".logo-wrapper")
-            const logo = document.querySelectorAll(".logo-wrapper>.char")
-            const tl = $gsap.timeline()
-            tl.set([logo, logoWrapper],{
-                opacity:0,
-                y:50
+            const upper = document.querySelectorAll('#upper-text>.cls-1')
+            const lower = document.querySelectorAll('#lower-text>.cls-1')
+            const tl = $gsap.timeline({defaults:{ease:'power4.out', duration:.7}})
+            $gsap.set('.logo-wrapper',{
+                autoAlpha:1
             })
-            tl.to(logoWrapper,{
-                opacity:1,
-                y:0,
-                duration:.4
+            $gsap.to('.logo-wrapper',{
+                scale:1.2,
+                duration:4,
             })
-            tl.fromTo(logo,{
-                opacity:0,
-                y:50
-            },{
-                opacity:1,
-                y:0,
-                duration:2,
-                stagger: .06,
-                ease:"expo.inOut",
-                onComplete() {
+            tl
+                .from(upper,{
+                    yPercent:-200,
+                    stagger:.03,
+                    skewY:60,
+                    skewX:30,
+                    scaleY:.9,
+                    opacity:0,
+                    ease:"expo.inOut",
+                })
+                .from(lower,{
+                    yPercent:215,
+                    stagger:.03,
+                    skewY:60,
+                    skewX:30,
+                    scaleY:.5,
+                    opacity:0,
+                    ease:"expo.inOut",
+                }, "-=.7")
+
+                .to(upper,{
+                    stagger:.03,
+                    skewX:30,
+                    x:30,
+                    scaleX:0,
+                    opacity:0,
+                    duration:.2,
+                    ease:"expo.inOut",
+                },"2")
+                .to(lower,{
+                    stagger:.03,
+                    skewX:30,
+                    x:30,
+                    scaleX:0,
+                    opacity:0,
+                    duration:.2,
+                    ease:"expo.inOut",
+                    onComplete() {
                     $gsap.to(preload,{
                         yPercent:-100,
                         duration:1,
-                        ease:"expo.inOut"
+                        ease:"expo.inOut",
+                        
                     }) 
-
                     enableScroll()
                     window.scrollTo(0, 0); // Scroll to the top of the window
-                    
+                    emit('loadingComplete');
                 }
-            })
-            disableScrolls();
-            
+                },"2")
         });
 
         onUnmounted(() => {
@@ -66,19 +88,29 @@
 </script>
 
 <template>
-    <div v-if="showPreloader" class="preloader">
-        <div class="text-center flex flex-col">
-            <span class="serif-medium">
-                Welcome to
-            </span>
-            <span class="overflow-hidden logo">
-                <p class="sans-serif-bold text-4xl uppercase overflow-hidden logo-wrapper" v-split-text="{ splitBy: 'char' }" >
-                    vickywitvicky
-                </p>
-            </span>
-            <span class="serif-medium">
-                Portfolio
-            </span>
+    <div class="preloader">
+        <div class="flex flex-col">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Layer_2" data-name="Layer 2" class="logo-wrapper" viewBox="0 0 277.51 118.79">
+                <g data-name="Layer 1">
+                    <g id="upper-text">
+                        <path class="cls-1" d="M14.94,1.29l15.88,49.47L46.03,1.2l15.04-.04-22.24,64.82-16.34.04L0,1.33l14.94-.04Z"/>
+                        <path class="cls-1" d="M82.19,1.1l.18,64.75-14.25.04-.18-64.75,14.25-.04Z"/>
+                        <path class="cls-1" d="M92.85,19.7c1.42-4.05,3.42-7.56,6-10.53,2.58-2.96,5.68-5.23,9.3-6.8C111.76.8,115.79.01,120.24,0c5.38-.02,10.16.92,14.35,2.8s7.58,4.65,10.18,8.29c2.6,3.65,4.07,8.16,4.42,13.54l-14.54.04c-.21-3.65-1.58-6.52-4.11-8.61-2.53-2.08-5.89-3.12-10.07-3.11-2.39,0-4.52.46-6.37,1.36-1.86.9-3.45,2.22-4.77,3.95-1.32,1.73-2.31,3.84-2.97,6.33-.66,2.49-.98,5.37-.97,8.62.02,6.51,1.36,11.54,4.03,15.08,2.67,3.55,6.39,5.31,11.17,5.3,2.72,0,5.13-.49,7.22-1.46,2.09-.97,3.73-2.33,4.92-4.1,1.19-1.76,1.85-3.87,1.97-6.33l14.54-.04c-.18,5.45-1.57,10.02-4.15,13.71-2.58,3.69-5.99,6.48-10.24,8.35-4.25,1.87-9.06,2.81-14.44,2.83-5.91.02-11.08-1.36-15.5-4.14-4.43-2.78-7.89-6.67-10.39-11.68-2.5-5.01-3.76-10.83-3.78-17.47-.01-4.98.69-9.5,2.1-13.55Z"/>
+                        <path class="cls-1" d="M172.15.85l.18,64.75-14.35.04-.18-64.75,14.35-.04ZM213.49.74l-25.52,31.45,26.69,33.3-16.74.05-19.9-25.45-6.45,8.69-5.61-10.35L195.66.79l17.83-.05Z"/>
+                        <path class="cls-1" d="M217.58.73l15.74-.04,13.43,27.86,13.17-27.93,15.74-.04-21.9,43,.06,21.82-14.35.04-.06-21.92L217.58.73Z"/>
+                    </g>
+                    <g id="lower-text">
+                        <path class="cls-1" d="M10.29,79.09l6.88,29.69,7.96-29.69h10.68l8.02,29.69,6.94-29.69h9.05l-10.98,39.22h-10.62l-7.9-29.56-7.48,29.56h-11.04L1.23,79.09h9.05Z"/>
+                        <path class="cls-1" d="M72.61,79.09v39.22h-8.63v-39.22h8.63Z"/>
+                        <path class="cls-1" d="M107.55,87.24h-10.86v31.07h-8.69v-31.07h-10.86v-8.15h30.41v8.15Z"/>
+                        <path class="cls-1" d="M119.61,79.09l9.53,29.99,9.29-29.99h9.11l-13.58,39.22h-9.89l-13.52-39.22h9.05Z"/>
+                        <path class="cls-1" d="M160.34,79.09v39.22h-8.63v-39.22h8.63Z"/>
+                        <path class="cls-1" d="M166.76,90.37c.86-2.45,2.08-4.57,3.65-6.37,1.57-1.79,3.45-3.16,5.64-4.1,2.19-.94,4.63-1.42,7.33-1.42,3.26,0,6.15.57,8.69,1.72,2.53,1.15,4.59,2.83,6.15,5.04,1.57,2.21,2.45,4.95,2.66,8.21h-8.81c-.12-2.21-.95-3.95-2.47-5.22-1.53-1.27-3.56-1.9-6.09-1.9-1.45,0-2.74.27-3.86.81-1.13.54-2.09,1.34-2.9,2.38-.8,1.05-1.41,2.32-1.81,3.83-.4,1.51-.6,3.25-.6,5.22,0,3.94.8,6.99,2.41,9.14,1.61,2.15,3.86,3.23,6.76,3.23,1.65,0,3.11-.29,4.37-.88,1.27-.58,2.26-1.41,2.99-2.47.72-1.07,1.12-2.34,1.21-3.83h8.81c-.12,3.3-.97,6.06-2.53,8.3-1.57,2.23-3.64,3.91-6.21,5.04-2.57,1.13-5.49,1.69-8.75,1.69-3.58,0-6.71-.84-9.38-2.53-2.68-1.69-4.77-4.05-6.27-7.09-1.51-3.04-2.26-6.57-2.26-10.59,0-3.02.43-5.75,1.3-8.21Z"/>
+                        <path class="cls-1" d="M214.82,79.09v39.22h-8.69v-39.22h8.69ZM239.86,79.09l-15.51,19.01,16.11,20.21h-10.14l-12.01-15.45-3.92,5.25-3.38-6.27,18.04-22.75h10.8Z"/>
+                        <path class="cls-1" d="M242.33,79.09h9.53l8.08,16.89,8.02-16.89h9.53l-13.33,26v13.21h-8.69v-13.27l-13.15-25.94Z"/>
+                    </g>
+                </g>
+            </svg>
         </div>
     </div>
 </template>
@@ -90,15 +122,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FAFF00;
+    background-color: #EA451D;
     color:#1A1A1A;
     z-index:9999;
     overflow: hidden;
  }
-
-</style>
-<style>
  .logo-wrapper {
+    width: 100%;
     opacity: 0 ;
  }
+
+</style>
+<style scoped>
+ svg{
+    fill: #F2EAE2;
+ }
+
 </style>

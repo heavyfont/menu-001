@@ -31,21 +31,25 @@ const stopLenis = () => {
 const startLenis = () => {
   lenis.start();
 };
-
+const destroyLenis = () => {
+  lenis.destroy();
+};
 export default defineNuxtPlugin((nuxtApp) => {
   
   nuxtApp.provide('lenis', lenis);
   nuxtApp.provide('stopLenis', stopLenis);
   nuxtApp.provide('startLenis', startLenis);
+  nuxtApp.provide('destroyLenis', destroyLenis);
 
-  nuxtApp.$router.afterEach((to, from) => {
-    if (to.path !== from.path) {
-      lenis.scrollTo('.app', {
-        offset: 0,
-        duration: 0,
-        easing: () => {},
-        immediate: true,
-      });
-    }
-  });
+  // nuxtApp.$router.beforeEach((to, from) => {
+  //   if (to.path !== from.path) {
+  //     lenis.scrollTo('.app', {
+  //       offset: 0,
+  //       duration: 0,
+  //       easing: () => {},
+  //       immediate: true,
+  //     });
+  //   }
+  
+  // });
 });

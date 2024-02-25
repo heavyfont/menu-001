@@ -1,15 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
      modules: [
-          '@nuxtjs/prismic',
           '@vueuse/nuxt',
-          '@nuxtjs/tailwindcss',
-          '@nuxt/image-edge',
+          '@nuxt/content',
           'nuxt-swiper',
           '@hypernym/nuxt-gsap',
           '@hypernym/nuxt-font',
           "nuxt-split-type",
-          "@nuxt/image"
+          "@nuxt/image",
+          '@nuxt/ui'
      ],
      
      css: [
@@ -31,16 +30,6 @@ export default defineNuxtConfig({
      },
      font: {
           autoImport: true,
-     },
-     experimental: {
-          viewTransition: true
-        },
-     tailwindcss: {
-          cssPath: '~/assets/css/tailwind.css',
-          configPath: 'tailwind.config.js',
-          exposeConfig: false,
-          injectPosition: 0,
-          viewer: true,
      },
      
      build: {
