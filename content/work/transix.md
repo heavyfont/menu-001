@@ -1,5 +1,5 @@
 ---
-title: 'Transix - vickywitvicky'
+title: 'Transix'
 meta: 'meta description of the page'
 desc: 'Transix Logistics is a fast-growing logistics firm noted for its comprehensive transportation and supply chain solutions.  Transix has quickly established itself as an industry leader thanks to its unique approach and devotion to customer satisfaction.'
 type: 'Visual Identity'

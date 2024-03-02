@@ -1,5 +1,5 @@
 ---
-title: 'Harmony Fest - vickywitvicky'
+title: 'Harmony Fest'
 meta: 'meta description of the page'
 desc: 'Identity design for the music festival. The branding and concept basically use vibrant and lively colors with flat illustration to represent the energy and diversity of the music festival welcoming all ages without restrictions.'
 type: 'Visual Identity'

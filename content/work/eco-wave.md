@@ -1,5 +1,5 @@
 ---
-title: 'Eco Wave - vickywitvicky'
+title: 'Eco Wave'
 meta: 'meta description of the page'
 desc: 'Self iniated Identity design for Eco Wave, a sustainable lifestyle and plastic waste reduction initiative. The logo and concept revolve mostly around eco-friendly design and flat drawing of leaves and flowers using shapes. This is a fun project mainly focused on the duration of the design and brand can be done within limited time based on the given branding and  concept. 
 '
