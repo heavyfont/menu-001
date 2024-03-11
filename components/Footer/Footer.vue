@@ -1,7 +1,7 @@
 <script setup lang="ts">
 </script>
 <template>
-    <footer class="footer">
+    <footer class="footer pt-20">
         <div class="footer-wrapper">
           <span class="uppercase text-orange text-sm flex items-center gap-2 justify-center mb-4">
                     <span><SvgStar /></span><span>Contact</span>

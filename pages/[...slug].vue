@@ -82,7 +82,7 @@ definePageMeta({
       </section>
       <section class="content-section container mx-auto">
             <ContentDoc v-slot="{ doc }">
-            <article class="px-4 md:py-4 py-2">
+            <article class="px-4 md:py-4 py-2" v-if="doc.firstimg">
                 <figure class="relative image-wrapper">
                         <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                               <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.firstimg" />
@@ -90,14 +90,14 @@ definePageMeta({
                 </figure>
             </article>
             <div class="grid grid-cols-2 md:gap-x-8 gap-3 px-4">
-                  <article class=" md:py-4 py-2">
+                  <article class=" md:py-4 py-2" v-if="doc.secondimg">
                         <figure class="relative image-wrapper">
                               <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                                     <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg" :src="doc.secondimg" />
                               </div>
                         </figure>
                   </article>
-                  <article class="md:py-4 py-2">
+                  <article class="md:py-4 py-2" v-if="doc.thirdimg">
                         <figure class="relative image-wrapper">
                               <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                                     <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.thirdimg" />
@@ -105,14 +105,14 @@ definePageMeta({
                         </figure>
                   </article>
             </div>
-            <article class="px-4 md:py-4 py-2">
+            <article class="px-4 md:py-4 py-2" v-if="doc.fourthimg">
                 <figure class="relative image-wrapper">
                    <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                         <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.fourthimg" />
                    </div>
                 </figure>
             </article>
-            <article class="px-4 md:py-4 py-2">
+            <article class="px-4 md:py-4 py-2" v-if="doc.fifthimg">
                 <figure class="relative image-wrapper">
                         <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                               <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.fifthimg" />
