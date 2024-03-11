@@ -62,9 +62,9 @@
         </section>
         <section>
             <div class="section-container mx-auto">
-                <ContentList path="/work" limit: 4, v-slot="{list}"  >
+                <ContentList path="/work" v-slot="{list}"  >
                         <div class="md:grid grid-cols-2 gap-10">
-                            <article v-for="(work, index) in list.slice(0, 4)" :key="work._path" class="mb-10 md:grid grid-cols-12 work-item" >
+                            <article v-for="(work, index) in list" :key="work._path" class="mb-10 md:grid grid-cols-12 work-item" >
                                 <NuxtLink :to="`/work/${work.slug}`" class="overflow-hidden col-span-6 col-start-4">
                                     <figure class=" relative w-full overflow-hidden  rounded-lg ">
                                             <div class="work-item-img relative bg-dark-yellow rounded-lg overflow-hidden">

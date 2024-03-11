@@ -10,7 +10,7 @@ export default defineNuxtConfig({
           "@nuxt/image",
           '@nuxt/ui'
      ],
-     
+     pages: true,
      css: [
           '~/assets/styles/main.scss',
           '~/assets/css/fonts.css'

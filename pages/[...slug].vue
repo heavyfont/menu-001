@@ -52,7 +52,7 @@ definePageMeta({
                                           </TextSplit>
                                     </Intersect>
                                </div>
-                              <div class="mt-10 flex flex-col gap-5 content-overview">
+                              <div class="mt-10 flex flex-col gap-5 content-overview items-center">
                                  <span class="text-2xl">
                                     Overview
                                  </span>
@@ -70,6 +70,9 @@ definePageMeta({
                                     </span>
                                     <span class="">
                                       <span class="uppercase text-orange text-sm mr-2"> Date</span> <span>{{ doc.date }}</span>
+                                    </span>
+                                    <span class=""  v-if="doc.link">
+                                      <span class="uppercase text-orange text-sm mr-2 "> Link</span> <span class="underline"> <NuxtLink :to=" doc.link">{{ doc.link }}</NuxtLink></span>
                                     </span>
                                  </aside>
                               </div>
@@ -117,14 +120,14 @@ definePageMeta({
                 </figure>
             </article>
             <div class="grid grid-cols-2 md:gap-x-8 gap-3 px-4">
-                  <article class="md:py-4 py-2">
+                  <article class="md:py-4 py-2" v-if="doc.sixthimg">
                         <figure class="relative image-wrapper">
                               <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                                     <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.sixthimg" />
                               </div>
                         </figure>
                   </article>
-                  <article class="md:py-4 py-2" >
+                  <article class="md:py-4 py-2" v-if="doc.seventhimg" >
                         <figure class="relative image-wrapper">
                               <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                                     <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.seventhimg" />
@@ -132,7 +135,7 @@ definePageMeta({
                         </figure>
                   </article>
             </div>
-            <article class="px-4 md:py-4 py-2" >
+            <article class="px-4 md:py-4 py-2" v-if="doc.eigthimg">
                 <figure class="relative image-wrapper">
                         <div class="absolute inset-0 bg-dark-yellow rounded-lg">
                               <NuxtImg class="abosolute top-0 left-0 h-full w-full rounded-lg"  :src="doc.eigthimg" />
