@@ -17,9 +17,9 @@ const lenis = new Lenis({
 });
 
 const raf = (time) => {
-  lenis.raf(time);
-  ScrollTrigger.update();
-  requestAnimationFrame(raf);
+    lenis.raf(time);
+    ScrollTrigger.update();
+    requestAnimationFrame(raf);
 };
 requestAnimationFrame(raf);
 
@@ -31,9 +31,11 @@ const stopLenis = () => {
 const startLenis = () => {
   lenis.start();
 };
+
 const destroyLenis = () => {
   lenis.destroy();
 };
+
 export default defineNuxtPlugin((nuxtApp) => {
   
   nuxtApp.provide('lenis', lenis);
@@ -41,15 +43,16 @@ export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.provide('startLenis', startLenis);
   nuxtApp.provide('destroyLenis', destroyLenis);
 
-  // nuxtApp.$router.beforeEach((to, from) => {
-  //   if (to.path !== from.path) {
-  //     lenis.scrollTo('.app', {
-  //       offset: 0,
-  //       duration: 0,
-  //       easing: () => {},
-  //       immediate: true,
-  //     });
-  //   }
+  nuxtApp.$router.beforeEach((to, from) => {
+    if (to.path !== from.path) {
+      lenis.destroy();
+    }
   
-  // });
+  });
+  nuxtApp.$router.isReady((to, from) => {
+    if (to.path !== from.path) {
+      lenis.start();
+    }
+  
+  });
 });

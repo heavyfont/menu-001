@@ -26,7 +26,7 @@ html{
 
 body{
     position: relative;
-    background-color: #F2EAE2;
+    background-color: #77a4b4;
 }
 
 section{
@@ -54,10 +54,7 @@ img{
     object-fit: cover;
 }
 
-.content-paragraph{
-    font-family: Libre, sans-serif;
-    line-height: 1;
-}
+
 a{
     font-size: 1rem;
 }
@@ -69,78 +66,4 @@ a{
     margin-inline: auto;
     padding-inline: var(--size-grid-gap);
 }
-
-
-
-
-  .link{
-    position: relative;
-    &::before{
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background: #EA451D;
-        top: 100%;
-        left: 0;
-        pointer-events: none;
-    }
-    &:hover{
-        &::before{
-            transform-origin: 0% 50%;
-            transform: scale3d(1, 1, 1);
-        }
-    }
-  }
-  .link::before{
-    transform-origin: 100% 50%;
-    transform: scale3d(0, 1, 1);
-    transition: transform 0.3s;
-  }
-  .link-alter{
-    position: relative;
-    &::before{
-        transform-origin: left;
-        transform: scaleX(1);
-        transition: transform .55s cubic-bezier(.785,.135,.15,.86);
-        transition-delay: .5s;
-    }
-    &::after{
-        transform-origin: right;
-        transform: scaleX(0);
-        transition: transform .55s cubic-bezier(.785,.135,.15,.86);
-        transition-delay: 0s;
-    }
-    &:hover{
-        &::before{
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: transform .55s cubic-bezier(.785,.135,.15,.86);
-            transition-delay: 0s;
-        } 
-        &::after{
-            transform-origin: left;
-            transform: scaleX(1);
-            transition: transform .55s cubic-bezier(.785,.135,.15,.86);
-            transition-delay: .2s;
-        } 
-    }
-  }
-  .link-alter::after, .link-alter::before{
-    content: "";
-    position: absolute;
-    bottom: -0.2em;
-    right: 0;
-    left: 0;
-    height: 0.05em;
-    min-height: 1px;
-    background-color: #1D1D1D;
-  }
-  .router-link-exact-active{
-
-  }
-
-  .small-link{
-
-  }
 

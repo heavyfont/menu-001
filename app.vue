@@ -5,17 +5,12 @@
   const router = useRouter();
   const isLoading = ref(true);
 
-    // nuxtApp.hook("page:start", () => {
-    //   isLoading.value = true;
-    // });
-    // nuxtApp.hook("page:finish", () => {
-    //   isLoading.value = false;
-    // });
+
 
   useHead({
-    title: 'Vickywitvicky',
+    title: 'Half Menu',
     meta: [
-    { name: 'description', content: 'Vickywitvicky portfolio' }
+    { name: 'Half Menu', content: 'Half Menu' }
   ],
   })
 
@@ -64,10 +59,7 @@
 
   });
   
-  const handleLoadingComplete = () => {
-      isLoading.value = false
-      console.log('Loading complete event received in app.vue');
-  }
+
 
 // Scroll to top when route changes
 
@@ -75,8 +67,7 @@
 <template>
   <Html lang="en"> 
       <main class="app">
-        <Preloader @loadingComplete="handleLoadingComplete"  />
-        <NuxtLayout ref="main" v-if="!isLoading"  >
+        <NuxtLayout ref="main"  >
            <NuxtPage  />
         </NuxtLayout>
       </main>
@@ -89,7 +80,5 @@
   margin: 0 auto;
   padding: 0.5rem;
 }
-.main-wrapper{
-  display: none;
-}
+
 </style>
